@@ -24,11 +24,11 @@ if wget -q --spider http://cdn.star.nesdis.noaa.gov/GOES19/ABI/CONUS/GEOCOLOR/; 
 
 cd ~/Pictures/NOAA_GOES19_CONUS/
 
- #copy latest to history in order to set buffer wallpaper
- cp ~/Pictures/NOAA_GOES19_CONUS/latest.jpg ~/Pictures/NOAA_GOES19_CONUS/history/latest.jpg
+ #move latest to history ##in order to set buffer wallpaper
+ mv ~/Pictures/NOAA_GOES19_CONUS/latest.jpg ~/Pictures/NOAA_GOES19_CONUS/history/latest.jpg
 
  #set buffer wallpaper
- /usr/bin/plasma-apply-wallpaperimage -f stretch ~/Pictures/NOAA_GOES19_CONUS/history/latest.jpg
+ #/usr/bin/plasma-apply-wallpaperimage -f stretch ~/Pictures/NOAA_GOES19_CONUS/history/latest.jpg
 
  #get new latest and set new
  wget -NS -P ~/Pictures/NOAA_GOES19_CONUS/ "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/CONUS/GEOCOLOR/latest.jpg"
@@ -50,3 +50,4 @@ delcnt=$(( ${#files[@]} - copiesToKeep ))
 [ $delcnt -gt 0 ] &&
 rm -f "${files[@]:0:delcnt}"
 
+exit
