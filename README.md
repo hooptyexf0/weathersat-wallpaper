@@ -12,4 +12,4 @@ Made to be run via Cron job, setup not baked into script yet.
 
 Must be made executable via chmod +x
 
-Only tested on Kubuntu 25.10, KDE Plasma 6 (works in both Wayland and X11)
+Only tested on Kubuntu 25.10 & 26.04 LTS, KDE Plasma 6 (works in both Wayland and X11)
