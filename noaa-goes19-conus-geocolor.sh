@@ -33,9 +33,11 @@ cd ~/Pictures/NOAA_GOES19_CONUS/
  #get new latest and set new
  wget -NS -P ~/Pictures/NOAA_GOES19_CONUS/ "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/CONUS/GEOCOLOR/latest.jpg"
 
- sleep 5
+ sleep 2
 
  /usr/bin/plasma-apply-wallpaperimage -f stretch ~/Pictures/NOAA_GOES19_CONUS/latest.jpg
+
+ sleep 2
 
  #rename old latest to timestamp (not sure why using move but w/e)
  mv ~/Pictures/NOAA_GOES19_CONUS/history/latest.jpg ~/Pictures/NOAA_GOES19_CONUS/history/latest$(date +"%Y-%m-%d_%H-%M").jpg
@@ -44,12 +46,10 @@ fi
 
 #clean up history
 
-copiesToKeep=48
+copiesToKeep=96
 files=( ~/Pictures/NOAA_GOES19_CONUS/history/* )
 delcnt=$(( ${#files[@]} - copiesToKeep ))
 [ $delcnt -gt 0 ] &&
 rm -f "${files[@]:0:delcnt}"
-
-sleep 5
 
 exit
